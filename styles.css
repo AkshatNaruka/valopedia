@@ -1,0 +1,531 @@
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0d1117;
+    color: #ffffff;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #ffffff;
+}
+
+p {
+    color: #e2e2e2;
+}
+
+a {
+    color: #26b1ff;
+}
+
+/* Example of using the accent color for a button */
+.button {
+    background-color: #ff4655;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+header {
+    background-color: #000;
+    padding: 10px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+    color: #fff;
+}
+
+body {
+    background-color: #0d1117;
+    color: #ffffff;
+}
+
+header {
+    background-color: #000;
+    padding: 10px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+    color: #fff;
+}
+
+#menu {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+#menu li {
+    margin-right: 10px;
+}
+
+#menu li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+#menu li a:hover{
+    color: #ff4655;
+}
+
+.agent-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 20px;
+    justify-items: center;
+    padding: 20px;
+}
+
+.agent-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 200px;
+    background-color: #1f2933;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.agent-button:hover {
+    background-color: #ff4655;
+    transform: scale(1.1);
+}
+
+.agent-button::before {
+    content: "";
+    display: block;
+    width: 120px;
+    height: 120px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    opacity: 0.8;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.agent-button:hover::before {
+    opacity: 1;
+}
+
+.agent-button span {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #fff;
+}
+
+#menu li {
+    margin-right: 10px;
+}
+
+#menu li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.agent-container {
+    max-width: 100%;
+    overflow-x: scroll;
+    white-space: nowrap;
+    padding: 20px 0;
+}
+
+.scroll-content {
+    display: inline-block;
+}
+
+.agent-card {
+    display: inline-block;
+    margin-right: 10px;
+    cursor: pointer;
+    text-align: center;
+    background-color: #13181d;
+    padding: 10px;
+}
+
+.agent-card img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.agent-card h3 {
+    margin-top: 10px;
+    font-size: 18px;
+    color: #fff;
+}
+
+.agent-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* Add this line to center vertically */
+    margin-top: 20px;
+}
+
+.agent-details h2 {
+    margin-top: 20px;
+    font-size: 24px;
+    color: #fff;
+}
+
+.agent-details img {
+    width: 600px;
+    height: 600px;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+    border-radius: 50%;
+}
+
+.agent-details .display-icon {
+    position: fixed;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #f2f2f2;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    opacity: 0.8;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.agent-details .display-icon.visible {
+    opacity: 1;
+}
+
+.agent-description {
+    font-size: 18px;
+    margin-top: 20px;
+    color: #fff;
+    text-align: center;
+}
+
+.agent-details h3 {
+    font-size: 20px;
+    color: #fff;
+    margin-top: 20px;
+}
+
+.agent-details .ability-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 20px;
+    justify-items: center;
+}
+
+.agent-ability {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.agent-ability .ability-icon {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+}
+
+.agent-ability .ability-name {
+    font-size: 16px;
+    margin-top: 10px;
+    color: #fff;
+}
+
+.agent-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    grid-gap: 10px;
+    justify-items: center;
+}
+
+.agent-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 160px;
+    height: 160px;
+    background-color: #f2f2f2;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 16px;
+}
+
+.agent-button::before {
+    content: "";
+    display: block;
+    width: 120px;
+    height: 120px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    opacity: 0.8;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.agent-button:hover::before {
+    opacity: 1;
+}
+
+.agent-button span {
+    margin-top: 10px;
+    font-size: 16px;
+    text-align: center;
+}
+
+.agent-details .ability-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 20px;
+    justify-items: center;
+}
+
+.agent-ability {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.agent-ability .ability-icon {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+.agent-ability .ability-name {
+    font-size: 14px;
+    margin-top: 5px;
+    color: #fff;
+}
+
+.ability-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 128px;
+    height: 128px;
+    background-color: transparent;
+    /* Set to transparent */
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    transition: background-color 0.3s ease-in-out;
+    /* Add a transition effect */
+}
+
+.ability-card img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+}
+
+.ability-card h4 {
+    font-size: 16px;
+    margin-top: 5px;
+}
+
+.ability-card p {
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+/* ... your existing CSS ... */
+
+.ability-description {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+}
+
+.ability-description .close-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.ability-description h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.ability-description p {
+    font-size: 18px;
+}
+
+#ability-description-box {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    text-align: center;
+}
+
+#ability-title {
+    font-size: 20px;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+#ability-text {
+    font-size: 16px;
+    color: #fff;
+    line-height: 1.6;
+}
+
+.agent-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.agent-heading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ff4655;
+    /* Accent color */
+    border-radius: 10px;
+    padding: 10px 20px;
+    margin-top: 20px;
+}
+
+.agent-heading h2 {
+    font-size: 28px;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
+.role-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ff4655;
+    /* Accent color */
+    border-radius: 10px;
+    padding: 10px 20px;
+    margin-top: 20px;
+}
+
+.role-box h3 {
+    font-size: 24px;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
+.role-box p {
+    font-size: 18px;
+    color: #ffffff;
+}
+
+.agent-heading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ff4655;
+    /* Accent color */
+    border-radius: 10px;
+    padding: 10px 20px;
+    margin-top: 20px;
+}
+
+.agent-heading h2 {
+    font-size: 60px;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
+#agent-name {
+    font-size: 60px;
+}
+
+.description-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ff4655;
+    /* Accent color */
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.description-box p {
+    font-size: 18px;
+    color: #ffffff;
+    text-align: center;
+}
+
+.role-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Add this line to center horizontally */
+    background-color: #13181d;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.role-box h3 {
+    font-size: 24px;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
+.role-box p {
+    font-size: 18px;
+    color: #ffffff;
+    margin: 5px 0;
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Agent Details</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Agent Details</h1>
+        <ul id="menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="agents.html">Agents</a></li>
+            <li><a href="#">About</a></li>
+        </ul>
+    </header>
+
+    <div class="agent-details">
+        <!-- Centered agent name with curved border-box -->
+        <div class="agent-heading">
+            <h2 id="agent-name"></h2>
+        </div>
+        <img id="agent-image" src="" alt="Agent Image">
+
+        <!-- Centered agent description with curved border-box -->
+        <div class="description-box">
+            <p id="agent-description"></p>
+        </div>
+
+        <!-- Centered role with curved border-box -->
+        <div class="role-box">
+            <h3>Role</h3>
+            <p id="agent-role"></p>
+        </div>
+
+        <h3 style="text-align: center;font-size: 24px;">Abilities</h3>
+        <div class="ability-grid" id="agent-abilities"></div>
+    </div>
+
+    <!-- Ability description box -->
+    <div class="ability-description" id="ability-description-box">
+        <div class="close-icon" id="close-button">X</div>
+        <h3 id="ability-title"></h3>
+        <p id="ability-text"></p>
+    </div>
+
+    <script src="agent-details.js"></script>
+</body>
+
+</html>
