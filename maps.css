@@ -1,67 +1,45 @@
+/* map-details.css */
+
 body {
-    background-color: #0d1117;
-    color: #ffffff;
-    margin: 0;
-    /* Remove margin to cover entire viewport */
-    overflow: hidden;
-    /* Prevent scrollbars */
-}
-
-header {
-    background-color: #000;
-    padding: 10px;
+    font-family: Arial, sans-serif;
     text-align: center;
-}
-
-/* ... your existing CSS ... */
-
-.map-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    /* Two columns for 2x2 grid */
-    grid-gap: 20px;
-    padding: 20px;
+    margin: 20px;
 }
 
 .map-card {
-    text-align: center;
-    cursor: pointer;
-    background-color: #13181d;
-    padding: 10px;
-    border-radius: 16px;
-    transition: transform 0.2s ease-in-out;
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 10px;
+    background-color: #f9f9f9;
+    display: inline-block;
 }
 
 .map-card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 10px;
+    max-width: 100px;
+    max-height: 100px;
 }
 
-.map-card h4 {
-    font-size: 16px;
-    margin-top: 10px;
+.learn-more-btn {
+    background-color: #007bff;
     color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
 }
 
-.map-card p {
-    font-size: 14px;
-    color: #e2e2e2;
+.learn-more-btn:hover {
+    background-color: #0056b3;
 }
 
-.map-card:hover {
-    transform: scale(1.1);
+.back-btn {
+    display: block;
+    margin-top: 20px;
+    text-decoration: none;
+    background-color: #007bff;
+    color: #fff;
+    padding: 5px 10px;
 }
 
-.map-card:active {
-    transform: scale(0.95);
-}
-
-.map-splash {
-    width: 200px;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 16px;
-    margin-top: 10px;
+.back-btn:hover {
+    background-color: #0056b3;
 }
