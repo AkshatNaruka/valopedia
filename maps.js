@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     </head>
                     <body>
                         <header>
-                            <h1><a href="index.html>Valopedia</a></h1>
+                            <h1>Valopedia</h1>
                             <ul id="menu">
                                 <li><a href="agents.html">Agents</a></li>
                                 <li><a href="maps.html">Maps</a></li>
