@@ -27,8 +27,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // Function to open map details in a new tab
             function openMapDetails(map) {
-                const newTab = window.open('', '_blank');
-                newTab.document.write(`
+                // Create a new HTML content as a string, including the header
+                const newContent = `
                     <html>
                     <head>
                         <title>${map.displayName}</title>
@@ -41,25 +41,59 @@ document.addEventListener('DOMContentLoaded', function () {
                                 font-family: Arial, sans-serif;
                             }
 
+                            header {
+                                background-color: #000;
+                                padding: 10px;
+                                text-align: center;
+                            }
+            
+                            header h1 {
+                                margin: 0;
+                                font-size: 24px;
+                                color: #fff;
+                            }
+
+                            #menu {
+                                list-style: none;
+                                padding: 0;
+                                display: flex;
+                                justify-content: center;
+                                margin-top: 10px;
+                            }
+                            
+                            #menu li {
+                                margin-right: 10px;
+                            }
+                            
+                            #menu li a {
+                                color: #fff;
+                                text-decoration: none;
+                                font-size: 18px;
+                            }
+                            
+                            #menu li a:hover{
+                                color: #ff4655;
+                            }
+
                             .map-info {
                                 display: flex;
                                 align-items: center;
                                 justify-content: space-between;
                                 margin: 20px;
                             }
-
+            
                             .map-info img {
                                 max-width: 100px;
                                 max-height: 100px;
                             }
-
+            
                             .map-details {
                                 display: flex;
                                 flex-direction: column;
                                 align-items: center;
                                 margin: 20px;
                             }
-
+            
                             .splash-container,
                             .display-icon {
                                 width: 500px;
@@ -67,7 +101,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                 overflow: hidden;
                                 margin: 20px;
                             }
-
+            
                             .splash-container img,
                             .display-icon img {
                                 width: 100%;
@@ -77,6 +111,14 @@ document.addEventListener('DOMContentLoaded', function () {
                         </style>
                     </head>
                     <body>
+                        <header>
+                            <h1><a href="index.html>Valopedia</a></h1>
+                            <ul id="menu">
+                                <li><a href="agents.html">Agents</a></li>
+                                <li><a href="maps.html">Maps</a></li>
+                                <li><a href="weapons.html">Weapons</a></li>
+                            </ul>
+                        </header>
                         <h1>${map.displayName}</h1>
                         <div class="map-details">
                             <div class="splash-container">
@@ -89,8 +131,15 @@ document.addEventListener('DOMContentLoaded', function () {
                         </div>
                     </body>
                     </html>
-                `);
+                `;
+            
+                // Replace the current page's content with the new HTML content
+                document.open();
+                document.write(newContent);
+                document.close();
             }
+            
+            
 
             // Populate map cards into the dynamic grid container
             maps.forEach(function (map) {
