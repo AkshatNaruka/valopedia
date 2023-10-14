@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function openAgentDetails(agent) {
     var agentURL = 'agent-details.html?uuid=' + agent.uuid;
-    window.open(agentURL, '_blank');
+    window.open(agentURL, '_self');
 }
 
 function toggleAgentDescription(button, description) {
