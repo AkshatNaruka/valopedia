@@ -114,9 +114,10 @@ document.addEventListener('DOMContentLoaded', function () {
                         <header>
                             <h1>Valopedia</h1>
                             <ul id="menu">
-                                <li><a href="agents.html">Agents</a></li>
-                                <li><a href="maps.html">Maps</a></li>
-                                <li><a href="weapons.html">Weapons</a></li>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="agents.html">Agents</a></li>
+                            <li><a href="maps.html">Maps</a></li>
+                            <li><a href="weapons.html">Weapon</a></li>
                             </ul>
                         </header>
                         <h1>${map.displayName}</h1>

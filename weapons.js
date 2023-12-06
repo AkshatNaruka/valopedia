@@ -35,16 +35,23 @@ function fetchWeaponDetails() {
                 const weaponName = data.data.displayName;
                 const displayIcon = data.data.displayIcon;
                 const stats = data.data.weaponStats;
-
+                const damage = data.data.weaponStats.damageRanges[0];
+                const cost = data.data.shopData.cost;
+                const category = data.data.shopData.category;
                 // Create HTML content
                 const htmlContent = `
                     <h2>${weaponName}</h2>
                     <img src="${displayIcon}" alt="${weaponName} Icon" style="max-width: 200px;">
                     <h3>Stats:</h3>
                     <ul>
+                        <li>Category: ${category}</li>
                         <li>Fire Rate: ${stats.fireRate}</li>
                         <li>Magazine Size: ${stats.magazineSize}</li>
-                        <li>Run Speed Multiplier: ${stats.runSpeedMultiplier}</li>
+                        <li>Reload Time: ${stats.reloadTimeSeconds}</li>
+                        <li>Headshot Damage: ${damage.headDamage}</li>
+                        <li>Body Damage: ${damage.bodyDamage}</li>
+                        <li>Leg Damage: ${damage.legDamage}</li>
+                        <li>Cost: ${cost}</li>
                         <!-- Add more stats as needed -->
                     </ul>
                 `;
