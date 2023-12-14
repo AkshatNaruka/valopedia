@@ -1,0 +1,84 @@
+.weapon-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 20px;
+    justify-items: center;
+    padding: 20px;
+}
+
+.weapon-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 200px;
+    background-color: #1f2933;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.weapon-button:hover {
+    background-color: #ff4655;
+    transform: scale(1.1);
+}
+
+.weapon-button::before {
+    content: "";
+    display: block;
+    width: 120px;
+    height: 120px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    opacity: 0.8;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.weapon-button:hover::before {
+    opacity: 1;
+}
+
+.weapon-button span {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #fff;
+}
+
+/* weapons.css */
+
+.weapon-card {
+    display:flexbox;
+    flex-direction:row;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 200px;
+    background-color: #1f2933;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.weapon-card:hover {
+    background-color: #ff4655;
+    transform: scale(1.1);
+}
+
+.weapon-card img {
+    max-width: 120px;
+    max-height: 120px;
+}
+
+.weapon-card h4 {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #fff;
+}

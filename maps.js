@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         <link rel="stylesheet" href="map-details.css">
                         <style>
                             body {
-                                background-color: black;
+                                background-color: #0d1117;
                                 color: white;
                                 text-align: center;
                                 font-family: Arial, sans-serif;

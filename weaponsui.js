@@ -49,7 +49,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Create new content for weapon details
         const htmlContent = `
-            
             <div class="weapon-details">
                 <h1>${weapon.displayName}</h1>
                 <div class="display-icon">
