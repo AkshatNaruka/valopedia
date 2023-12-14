@@ -31,7 +31,6 @@ document.addEventListener('DOMContentLoaded', function () {
         weaponCard.innerHTML = `
             <div class="weapon-info">
                 <img src="${weapon.displayIcon}" alt="${weapon.displayName}" data-weapon-id="${weapon.uuid}">
-                <h4 style="text-align:center">${weapon.displayName}</h4>
             </div>
         `;
 

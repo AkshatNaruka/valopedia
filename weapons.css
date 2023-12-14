@@ -51,16 +51,18 @@
 
 /* weapons.css */
 
+/* weapons.css */
+
 .weapon-card {
-    display:flexbox;
-    flex-direction:row;
+    display: inline-flexbox; /* Corrected from flexbox to flex */
+    flex-direction: row;
     align-items: center;
     justify-content: center;
     width: 200px;
     height: 200px;
     background-color: #1f2933;
     border: none;
-    cursor: pointer;
+    cursor:pointer;
     overflow: hidden;
     border-radius: 16px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -73,12 +75,10 @@
 }
 
 .weapon-card img {
-    max-width: 120px;
-    max-height: 120px;
+    width: 100%; /* Ensures the image covers the container */
+    height: 100%;
+    object-fit: cover; /* Keeps the aspect ratio while covering the container */
+    border-radius: 16px; /* Optional: Apply border-radius to the image */
 }
 
-.weapon-card h4 {
-    margin-top: 10px;
-    font-size: 16px;
-    color: #fff;
-}
+
