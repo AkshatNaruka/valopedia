@@ -14,11 +14,12 @@ document.addEventListener('DOMContentLoaded', function () {
                 const mapCard = document.createElement('div');
                 mapCard.classList.add('map-card');
                 mapCard.innerHTML = `
-                    <div class="map-info">
+                    <div class="map-info" style="border-radius: 20px;">
                         <img src="${map.listViewIcon}" alt="${map.displayName}" data-map-id="${map.uuid}">
                         <h4 style="text-align:center">${map.displayName}</h4>
                     </div>
                 `;
+                mapCard.style.borderRadius = '10px';
                 mapCard.addEventListener('click', function () {
                     openMapDetails(map);
                 });
@@ -100,6 +101,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                 height: 500px;
                                 overflow: hidden;
                                 margin: 20px;
+                                border-radius: 20px;
                             }
             
                             .splash-container img,
@@ -107,6 +109,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                 width: 100%;
                                 height: 100%;
                                 object-fit: cover;
+                                border-radius: 20px;
                             }
                         </style>
                     </head>
