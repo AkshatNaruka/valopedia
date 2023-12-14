@@ -1,0 +1,43 @@
+function fetchWeaponDetails() {
+    // Select the weaponDetails div
+    const weaponDetailsDiv = document.getElementById('weaponDetails');
+
+    // Loop through each UUID and fetch details
+    gunUuids.forEach(weaponUuid => {
+        const apiUrl = `https://valorant-api.com/v1/weapons/${weaponUuid}`;
+
+        // Fetch weapon data from the API
+        fetch(apiUrl)
+            .then(response => response.json())
+            .then(data => {
+                // Extract relevant information
+                const weaponName = data.data.displayName;
+                const displayIcon = data.data.displayIcon;
+                
+                // Create weapon container element
+                const weaponContainer = document.createElement('div');
+                weaponContainer.classList.add('weapon-container');
+
+                // Create HTML content with only displayIcon
+                const htmlContent = `
+                    <img src="${displayIcon}" alt="${weaponName} Icon" style="max-width: 150px;">
+                `;
+
+                // Set the HTML content of the weapon container
+                weaponContainer.innerHTML = htmlContent;
+
+                // Add click event listener to each weapon container
+                weaponContainer.addEventListener('click', () => {
+                    // Open weapon details in a new tab
+                    window.open(`weapons.html?uuid=${gunUuids}`, '_blank');
+                });
+
+                // Append the weapon container to the weaponDetails div
+                weaponDetailsDiv.appendChild(weaponContainer);
+            })
+            .catch(error => console.error(`Error fetching weapon data for ${weaponUuid}:`, error));
+    });
+}
+
+// Call the function to fetch and display weapon details
+fetchWeaponDetails();
