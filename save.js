@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', function () {
     // Select the weaponDetails div
     const weaponDetailsDiv = document.getElementById('weaponDetails');
@@ -30,27 +29,16 @@ document.addEventListener('DOMContentLoaded', function () {
         const weaponCard = document.createElement('div');
         weaponCard.classList.add('weapon-card');
         const weaponName = weapon.displayName;
-                    const displayIcon = weapon.displayIcon;
-                    const stats = weapon.weaponStats;
-                    const damage = weapon.weaponStats.damageRanges[0];
-                    const cost = weapon.shopData.cost;
-                    const category = weapon.shopData.category;
+        const displayIcon = weapon.displayIcon;
+        const stats = weapon.weaponStats;
+        const damage = weapon.weaponStats.damageRanges[0];
+        const cost = weapon.shopData.cost;
+        const category = weapon.shopData.category;
 
         weaponCard.innerHTML = `
             <div class="weapon-info">
                 <img src="${weapon.displayIcon}" alt="${weapon.displayName}" data-weapon-id="${weapon.uuid}">
                 <h4 style="text-align:center">${weapon.displayName}</h4>
-                <ul>
-                        <li>Category: ${category}</li>
-                        <li>Fire Rate: ${stats.fireRate}</li>
-                        <li>Magazine Size: ${stats.magazineSize}</li>
-                        <li>Reload Time: ${stats.reloadTimeSeconds}</li>
-                        <li>Headshot Damage: ${damage.headDamage}</li>
-                        <li>Body Damage: ${damage.bodyDamage}</li>
-                        <li>Leg Damage: ${damage.legDamage}</li>
-                        <li>Cost: ${cost}</li>
-                        <!-- Add more stats as needed -->
-                </ul>
             </div>
         `;
         weaponCard.addEventListener('click', function () {
@@ -61,46 +49,39 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Function to open weapon details in a new tab
     function openWeaponDetails(weapon) {
-        // Create a new HTML content as a string, including the header
-        const newContent = `
-            <html>
-            <head>
-                <title>${weapon.displayName}</title>
-                <link rel="stylesheet" href="styles.css">
-                <!-- Add your weapon details page styles here -->
-                <!-- Include the same header as in the maps page -->
-            </head>
-            <body>
-                <!-- Include the same header as in the maps page -->
-                <h1>${weapon.displayName}</h1>
-                <div class="weapon-details">
-                    <div class="display-icon">
-                        <img src="${weapon.displayIcon}" alt="${weapon.displayName} Icon">
+        // Create a new HTML content as a string
+        const modalContent = `
+            <div class="modal">
+                <div class="modal-content">
+                    <span class="close-modal" onclick="closeWeaponDetails()">&times;</span>
+                    <h1>${weapon.displayName}</h1>
+                    <div class="weapon-details">
+                        <div class="display-icon">
+                            <img src="${weapon.displayIcon}" alt="${weapon.displayName} Icon">
+                        </div>
+                        <p>${weapon.description}</p>
+                        <h3>Stats:</h3>
+                        <ul>
+                            <li>Category: ${weapon.shopData.category}</li>
+                            <li>Fire Rate: ${weapon.weaponStats.fireRate}</li>
+                            <!-- Add more stats as needed -->
+                        </ul>
+                        <!-- Add more details as needed -->
                     </div>
-                    <p>${weapon.description}</p>
-                    <h3>Stats:</h3>
-                    <ul>
-                        <li>Category: ${category}</li>
-                        <li>Fire Rate: ${stats.fireRate}</li>
-                        <li>Magazine Size: ${stats.magazineSize}</li>
-                        <li>Reload Time: ${stats.reloadTimeSeconds}</li>
-                        <li>Headshot Damage: ${damage.headDamage}</li>
-                        <li>Body Damage: ${damage.bodyDamage}</li>
-                        <li>Leg Damage: ${damage.legDamage}</li>
-                        <li>Cost: ${cost}</li>
-                        <!-- Add more stats as needed -->
-                    </ul>
-                    <!-- Add more details as needed -->
                 </div>
-            </body>
-            </html>
+            </div>
         `;
 
-        // Replace the current page's content with the new HTML content
-        document.open();
-        document.write(newContent);
-        document.close();
+        // Append the modal content to the weaponDetailsDiv
+        weaponDetailsDiv.innerHTML += modalContent;
     }
+
+    window.closeWeaponDetails = function () {
+        const modal = document.querySelector('.modal');
+        if (modal) {
+            modal.remove();
+        }
+    };
 
     // Fetch weapon details from the API
     function fetchWeaponDetails() {

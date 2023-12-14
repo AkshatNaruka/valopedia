@@ -1,9 +1,7 @@
-
 document.addEventListener('DOMContentLoaded', function () {
     // Select the weaponDetails div
     const weaponDetailsDiv = document.getElementById('weaponDetails');
 
-    // Array of weapon UUIDs
     const gunUuids = [
         "63e6c2b6-4a8e-869c-3d4c-e38355226584",
         "55d8a0f4-4274-ca67-fe2c-06ab45efdf58",
@@ -29,91 +27,61 @@ document.addEventListener('DOMContentLoaded', function () {
     function createWeaponCard(weapon) {
         const weaponCard = document.createElement('div');
         weaponCard.classList.add('weapon-card');
-        const weaponName = weapon.displayName;
-                    const displayIcon = weapon.displayIcon;
-                    const stats = weapon.weaponStats;
-                    const damage = weapon.weaponStats.damageRanges[0];
-                    const cost = weapon.shopData.cost;
-                    const category = weapon.shopData.category;
 
         weaponCard.innerHTML = `
             <div class="weapon-info">
                 <img src="${weapon.displayIcon}" alt="${weapon.displayName}" data-weapon-id="${weapon.uuid}">
                 <h4 style="text-align:center">${weapon.displayName}</h4>
-                <ul>
-                        <li>Category: ${category}</li>
-                        <li>Fire Rate: ${stats.fireRate}</li>
-                        <li>Magazine Size: ${stats.magazineSize}</li>
-                        <li>Reload Time: ${stats.reloadTimeSeconds}</li>
-                        <li>Headshot Damage: ${damage.headDamage}</li>
-                        <li>Body Damage: ${damage.bodyDamage}</li>
-                        <li>Leg Damage: ${damage.legDamage}</li>
-                        <li>Cost: ${cost}</li>
-                        <!-- Add more stats as needed -->
-                </ul>
             </div>
         `;
+
         weaponCard.addEventListener('click', function () {
             openWeaponDetails(weapon);
         });
+
         return weaponCard;
     }
 
-    // Function to open weapon details in a new tab
+    // Function to open weapon details in the same page
     function openWeaponDetails(weapon) {
-        // Create a new HTML content as a string, including the header
-        const newContent = `
-            <html>
-            <head>
-                <title>${weapon.displayName}</title>
-                <link rel="stylesheet" href="styles.css">
-                <!-- Add your weapon details page styles here -->
-                <!-- Include the same header as in the maps page -->
-            </head>
-            <body>
-                <!-- Include the same header as in the maps page -->
+        // Clear existing content in weaponDetailsDiv
+        weaponDetailsDiv.innerHTML = '';
+
+        // Create new content for weapon details
+        const htmlContent = `
+            
+            <div class="weapon-details">
                 <h1>${weapon.displayName}</h1>
-                <div class="weapon-details">
-                    <div class="display-icon">
-                        <img src="${weapon.displayIcon}" alt="${weapon.displayName} Icon">
-                    </div>
-                    <p>${weapon.description}</p>
-                    <h3>Stats:</h3>
-                    <ul>
-                        <li>Category: ${category}</li>
-                        <li>Fire Rate: ${stats.fireRate}</li>
-                        <li>Magazine Size: ${stats.magazineSize}</li>
-                        <li>Reload Time: ${stats.reloadTimeSeconds}</li>
-                        <li>Headshot Damage: ${damage.headDamage}</li>
-                        <li>Body Damage: ${damage.bodyDamage}</li>
-                        <li>Leg Damage: ${damage.legDamage}</li>
-                        <li>Cost: ${cost}</li>
-                        <!-- Add more stats as needed -->
-                    </ul>
-                    <!-- Add more details as needed -->
+                <div class="display-icon">
+                    <img src="${weapon.displayIcon}" alt="${weapon.displayName} Icon">
                 </div>
-            </body>
-            </html>
+                <h3>Stats:</h3>
+                <ul>
+                    <li>Category: ${weapon.shopData.category}</li>
+                    <li>Fire Rate: ${weapon.weaponStats.fireRate}</li>
+                    <li>Magazine Size: ${weapon.weaponStats.magazineSize}</li>
+                    <li>Reload Time: ${weapon.weaponStats.reloadTimeSeconds}</li>
+                    <li>Headshot Damage: ${weapon.weaponStats.damageRanges[0].headDamage}</li>
+                    <li>Body Damage: ${weapon.weaponStats.damageRanges[0].bodyDamage}</li>
+                    <li>Leg Damage: ${weapon.weaponStats.damageRanges[0].legDamage}</li>
+                    <li>Cost: ${weapon.shopData.cost}</li>
+                    <!-- Add more stats as needed -->
+                </ul>
+            </div>
         `;
 
-        // Replace the current page's content with the new HTML content
-        document.open();
-        document.write(newContent);
-        document.close();
+        // Append the new content to weaponDetailsDiv
+        weaponDetailsDiv.innerHTML = htmlContent;
     }
 
     // Fetch weapon details from the API
     function fetchWeaponDetails() {
-    
-        // Loop through each UUID and fetch details
         gunUuids.forEach(weaponUuid => {
             const apiUrl = `https://valorant-api.com/v1/weapons/${weaponUuid}`;
-    
-            // Fetch weapon data from the API
+
             fetch(apiUrl)
                 .then(response => response.json())
                 .then(data => {
-                    // Extract relevant information
                     const weapon = data.data;
                     const weaponCard = createWeaponCard(weapon);
                     weaponDetailsDiv.appendChild(weaponCard);
@@ -121,6 +89,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 .catch(error => console.error(`Error fetching weapon data for ${weaponUuid}:`, error));
         });
     }
+
     // Call the function to fetch and display weapon details
     fetchWeaponDetails();
 });
