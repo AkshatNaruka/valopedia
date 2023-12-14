@@ -48,13 +48,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Create new content for weapon details
         const htmlContent = `
-            <div class="weapon-details">
+            <div class="weapon-details" style="font-size:20px;">
                 <h1>${weapon.displayName}</h1>
+                <br>
+                <br>
                 <div class="display-icon">
                     <img src="${weapon.displayIcon}" alt="${weapon.displayName} Icon">
                 </div>
-                <h3>Stats:</h3>
-                <ul>
+                <br>
+                <br>
+                <ul style="list-style-type: none;">
                     <li>Category: ${weapon.shopData.category}</li>
                     <li>Fire Rate: ${weapon.weaponStats.fireRate}</li>
                     <li>Magazine Size: ${weapon.weaponStats.magazineSize}</li>

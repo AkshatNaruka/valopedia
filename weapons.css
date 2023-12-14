@@ -1,4 +1,5 @@
 .weapon-grid {
+    align-items: center;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     grid-gap: 20px;
@@ -50,15 +51,18 @@
 }
 
 /* weapons.css */
+li {
+    list-style-type: none;
+    padding: 5px;
+}
 
-/* weapons.css */
 
 .weapon-card {
     display: inline-flexbox; /* Corrected from flexbox to flex */
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    width: 200px;
+    width: 400px;
     height: 200px;
     background-color: #1f2933;
     border: none;
