@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             if (agent) {
                 // Populate agent details
+                document.getElementById('agent-image').style.backgroundImage = `url('${agent.background}')`;
                 document.getElementById('agent-name').textContent = agent.displayName;
                 document.getElementById('agent-image').src = agent.fullPortrait;
                 document.getElementById('agent-description').textContent = agent.description;
