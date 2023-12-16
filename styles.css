@@ -359,17 +359,28 @@ header h1 {
 
 /* ... your existing CSS ... */
 
+/* Add these styles to your existing CSS */
 .ability-description {
     display: none;
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #fff;
-    padding: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    z-index: 9999;
+    max-width: 80%; /* Set a maximum width */
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.7); /* Background color with opacity for blur effect */
+    backdrop-filter: blur(10px); /* Blur effect */
+    color: #fff; /* White text color */
+    border-radius: 5px;
+    text-align: center;
+    overflow: hidden;
 }
+
+.ability-description p {
+    margin: 0;
+    overflow: hidden;
+}
+
 
 .ability-description .close-icon {
     position: absolute;

@@ -36,12 +36,20 @@ document.addEventListener('DOMContentLoaded', function () {
                     abilityCard.innerHTML = `
                         <img src="${ability.displayIcon}" alt="${ability.displayName}">
                         <h4>${ability.displayName}</h4>
+                        <div class="ability-description">
+                            <p>${ability.description}</p>
+                        </div>
                     `;
                     abilitiesGrid.appendChild(abilityCard);
 
-                    // Add click event listener to show ability description box
-                    abilityCard.addEventListener('click', function () {
-                        showAbilityDescription(ability);
+                    // Add mouseover event listener to show ability description
+                    abilityCard.addEventListener('mouseover', function () {
+                        showAbilityDescription(abilityCard);
+                    });
+
+                    // Add mouseout event listener to hide ability description
+                    abilityCard.addEventListener('mouseout', function () {
+                        hideAbilityDescription(abilityCard);
                     });
                 });
 
@@ -53,25 +61,18 @@ document.addEventListener('DOMContentLoaded', function () {
             console.log('Error:', error);
         });
 
-    // Function to show ability description box
-    function showAbilityDescription(ability) {
-        var descriptionBox = document.querySelector('.ability-description');
+    // Function to show ability description on hover
+    function showAbilityDescription(abilityCard) {
+        var descriptionBox = abilityCard.querySelector('.ability-description');
         descriptionBox.style.display = 'block';
-        document.getElementById('ability-title').textContent = ability.displayName;
-        document.getElementById('ability-text').textContent = ability.description;
     }
 
-    // Function to close ability description box
-    function closeAbilityDescriptionBox() {
-        var descriptionBox = document.getElementById('ability-description-box');
+    // Function to hide ability description on mouseout
+    function hideAbilityDescription(abilityCard) {
+        var descriptionBox = abilityCard.querySelector('.ability-description');
         descriptionBox.style.display = 'none';
     }
 
-    // Add event listener to close button
-    var closeButton = document.getElementById('close-button');
-    if (closeButton) {
-        closeButton.addEventListener('click', closeAbilityDescriptionBox);
-    }
 
 
 
