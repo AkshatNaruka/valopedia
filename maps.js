@@ -16,7 +16,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 mapCard.innerHTML = `
                     <div class="map-info" style="border-radius: 20px;">
                         <img src="${map.listViewIcon}" alt="${map.displayName}" data-map-id="${map.uuid}">
-                        <h4 style="text-align:center">${map.displayName}</h4>
                     </div>
                 `;
                 mapCard.style.borderRadius = '10px';
@@ -124,11 +123,11 @@ document.addEventListener('DOMContentLoaded', function () {
                             </ul>
                         </header>
                         <h1>${map.displayName}</h1>
+                        <p>${map.narrativeDescription}</p>
                         <div class="map-details">
                             <div class="splash-container">
                                 <img src="${map.splash}" alt="${map.displayName} Splash">
                             </div>
-                            <p>${map.narrativeDescription}</p>
                             <div class="display-icon">
                                 <img src="${map.displayIcon}" alt="${map.displayName} Icon">
                             </div>
