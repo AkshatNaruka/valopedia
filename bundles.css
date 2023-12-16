@@ -147,3 +147,14 @@ body {
     max-height: 80vh;
     margin-top: 20px;
 }
+
+.icon-container {
+    display: flex;
+    align-items: center;
+}
+
+.icon {
+    margin-left: 10px;
+    width: 24px; /* Adjust the size as needed */
+    height: 24px; /* Adjust the size as needed */
+}

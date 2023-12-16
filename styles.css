@@ -531,3 +531,14 @@ header h1 {
     justify-content: center;
     min-height: 100vh; /* Make the container take up the entire viewport height */
 }
+
+.icon-container {
+    display: flex;
+    align-items: center;
+}
+
+.icon {
+    margin-left: 10px;
+    width: 24px; /* Adjust the size as needed */
+    height: 24px; /* Adjust the size as needed */
+}

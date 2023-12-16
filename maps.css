@@ -43,3 +43,14 @@ body {
 .back-btn:hover {
     background-color: #0056b3;
 }
+
+.icon-container {
+    display: flex;
+    align-items: center;
+}
+
+.icon {
+    margin-left: 10px;
+    width: 24px; /* Adjust the size as needed */
+    height: 24px; /* Adjust the size as needed */
+}
